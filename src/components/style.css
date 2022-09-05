@@ -1,0 +1,14 @@
+.cart{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+}
+.badge{
+    cursor: pointer;
+}
+.App .alert-block{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  
