@@ -4,12 +4,13 @@ import Product from './Product';
 import CartGroup from './CartGroup';
 import ContextValues from '../context/ContextValues';
 import ContextTheme from '../context/ContextTheme';
+import { Outlet } from 'react-router-dom';
 
 
 
 function Products(){
-    const [productsArr, setProductsArr] = useState([]);
-    const{setAlert, user, setUser, alert} = useContext(ContextTheme);
+    
+    const {setAlert, user, setUser, alert, productsArr, setProductsArr} = useContext(ContextTheme);
     
     
     useEffect(()=>{
@@ -158,6 +159,7 @@ function Products(){
 
     return <>
         <ContextValues.Provider value={value}>
+            <Row><Outlet context={productsArr} /></Row>
             <Row xs={1} md={3} className={`g-4 p-4 my-4`}>
                 {productsArr.map(el => <Product key ={el.id} product={el} />)}
             </Row>
